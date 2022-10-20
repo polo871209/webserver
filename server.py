@@ -29,10 +29,3 @@ def submit_form():
         data = request.form.to_dict()
         write_to_csv(data)
         return redirect('thankyou.html')
-
-from pymongo import MongoClient
-
-def get_database():
-   CONNECTION_STRING = "mongodb+srv://polohi:0yKy6gvhcz0ac9dR@cluster0.or0xa7y.mongodb.net/test"
-   client = MongoClient(CONNECTION_STRING)
-   return client['user_messages']
